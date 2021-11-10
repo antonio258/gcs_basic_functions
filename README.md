@@ -1,7 +1,3 @@
-<div id="top"></div>
-
-
-
 <!-- PROJECT LOGO -->
 <br />
 
@@ -48,8 +44,6 @@ gcloud auth application-default login
    cd gcs_basic_functions
    pip install .
    ```
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 <!-- ROADMAP -->
