@@ -34,11 +34,12 @@ def upload(bucket_name, blob_path, local_path, project=''):
     isdir = os.path.isdir(local_path)
     storage_client = storage.Client(project=project)
     bucket = storage_client.get_bucket(bucket_name)
-    blob = bucket.blob(blob_path)
     if isdir:
-        for file in glob(local_path + '/*'):
-            blob.upload_from_filename(file)
+        for file in glob(local_path + '/**'):
+            upload(bucket_name, blob_path + "/" + os.path.basename(local_path), file, project=project)
     else:
+        remote_path = os.path.join(blob_path, local_path[1 + len(local_path):])
+        blob = bucket.blob(remote_path)
         blob.upload_from_filename(local_path)
 
 
