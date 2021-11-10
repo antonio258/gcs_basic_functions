@@ -8,7 +8,7 @@ if os.path.isfile(requirements):
         install_requires = f.read().splitlines()
 
 setup(
-    name='gcp',
+    name='gcs',
     version='1.0',
     packages=['gcs_basic'],
     url='',
