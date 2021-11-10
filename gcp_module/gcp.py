@@ -16,16 +16,15 @@ def download(bucket_name, blob_path, down_path, project=''):
     """
     storage_client = storage.Client(project=project)
     bucket = storage_client.get_bucket(bucket_name)
-    blobs = bucket.list_blobs(prefix=blob_path)
-    blobs = [x for x in blobs]
+    blobs = [x for x in bucket.list_blobs(prefix=blob_path)]
     sep = '/' if down_path[-1] != '/' else ''
     if len(blobs) > 1:
         for blob in blobs:
-            os.makedirs(down_path + sep + blob.name.split('/')[:-1], exist_ok=True)
-            blob.download_to_filename(down_path)
+            os.makedirs(down_path + sep + "/".join(blob.name.split('/')[:-1]), exist_ok=True)
+            blob.download_to_filename(down_path + sep + blob.name)
     else:
         blob = bucket.blob(blob_path)
-        blob.download_to_filename(down_path)
+        blob.download_to_filename(down_path + sep + blob.name.split('/')[-1])
 
 
 def upload(bucket_name, blob_path, local_path, project=''):
