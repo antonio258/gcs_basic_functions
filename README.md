@@ -19,11 +19,11 @@ gcs_basic.list_blobs(bucket_name, blob_path, project)
 
 This is an example of how to list things you need to use the software and how to install them.
 * python python-pip
-  ```sh
-  sudo apt-get install python3 python-pip
-  #or
-  sudo pacman -S python python-pip
-  ```
+```sh
+sudo apt-get install python3 python-pip
+#or
+sudo pacman -S python python-pip
+```
 * Google cloud SDK for credentials - temporarily
 ```
 wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-364.0.0-linux-x86_64.tar.gz
