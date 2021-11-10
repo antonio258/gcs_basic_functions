@@ -10,7 +10,7 @@ if os.path.isfile(requirements):
 setup(
     name='gcp',
     version='1.0',
-    packages=['gcp_module'],
+    packages=['gcs_basic'],
     url='',
     license='',
     author='antonio',
