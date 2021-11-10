@@ -37,7 +37,7 @@ def upload(bucket_name, blob_path, local_path, project=''):
     blob = bucket.blob(blob_path)
     if isdir:
         for file in glob(local_path + '/*'):
-            blob.upload_from_filename(blob_path + '/' + file)
+            blob.upload_from_filename(blob_path + '/' + file.split('/')[-1])
     else:
         blob.upload_from_filename(local_path)
 
