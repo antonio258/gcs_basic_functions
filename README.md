@@ -53,5 +53,5 @@ gcloud auth application-default login
 - [x] Upload one file to storage
 - [x] Download folder from storage
 - [x] Upload folder to storage
-- [x] list blobs
-- [ ] check credentials in library
+- [x] List blobs
+- [ ] Check credentials in library
